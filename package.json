@@ -1,0 +1,29 @@
+{
+  "name": "codesandbox",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@storybook/react": "5.3.19",
+    "carbon-components": "10.14.0",
+    "carbon-components-react": "7.14.0",
+    "prettier": "2.0.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "2.1.8",
+    "styled-components": "5.1.1",
+    "styled-components-modifiers": "1.2.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
