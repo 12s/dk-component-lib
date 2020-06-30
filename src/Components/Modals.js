@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-// import { animated, useSpring } from "react-spring";
-import { typeScale, primaryFont, nuetral } from "../utils";
-import { PrimaryButton, SecondaryButton } from "./Buttons";
-import { EmailInput, PasswordInput } from "./TextFields";
+import { animated, useSpring } from "react-spring";
+import { typeScale, primaryFont, nuetral, dodger } from "../utils";
+import { Button } from "./Buttons";
+// import { EmailInput, PasswordInput } from "./TextFields";
 
 const getAnimation = (showModal) => {
   return {
@@ -13,7 +13,7 @@ const getAnimation = (showModal) => {
 };
 
 const ModalWrapper = styled.div`
-  width: 800px;
+  width: 700px;
   height: 500px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   font-family: ${primaryFont};
@@ -33,12 +33,6 @@ const ColumnModalWrapper = styled(ModalWrapper)`
 
 const ModalHeader = styled.h3`
   font-size: ${typeScale.header3};
-`;
-
-const HeaderImage = styled.img`
-  src: https://d9sojbwwxq62r.cloudfront.net/dkjs/baa034abd5a1637103cc1d9ef99f572b.png;
-  height: 76px;
-  width: 140px;
 `;
 
 const SignUpText = styled.p`
@@ -61,19 +55,20 @@ const CloseModalButton = styled.button`
 
 export const SignUpModal = ({ showModal, setShowModal }) => {
   return (
-    <ModalWrapper>
-      <HeaderImage />
-      <ModalHeader>Sign Up</ModalHeader>
-      <SignUpText>
-        Sign up today to get access to all of our content and features!
-      </SignUpText>
-      <PrimaryButton onClick={() => console.log("You signed up!")}>
-        Sign Up
-      </PrimaryButton>
-      <CloseModalButton
-        aria-label="Close modal"
-        onClick={() => setShowModal(false)}
-      ></CloseModalButton>
-    </ModalWrapper>
+    <animated.div style={useSpring(getAnimation(showModal))}>
+      <ModalWrapper>
+        <img
+          src="https://d9sojbwwxq62r.cloudfront.net/dkjs/baa034abd5a1637103cc1d9ef99f572b.png"
+          height="76"
+          width="140"
+        />
+        <ModalHeader>Sign Up</ModalHeader>
+        <SignUpText>
+          Sign up today to get access to all of our content and features!
+        </SignUpText>
+
+        <Button onClick={() => console.log("You signed up!")}>Sign Up</Button>
+      </ModalWrapper>
+    </animated.div>
   );
 };

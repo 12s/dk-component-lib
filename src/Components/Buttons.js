@@ -5,6 +5,7 @@ import {
   primaryFont,
   red,
   dodger,
+  nuetral,
   lime
 } from "../utils";
 import { applyStyleModifiers } from "styled-components-modifiers";
@@ -21,6 +22,20 @@ export const STATUS_MODIFIERS = {
   success: () => `
   background-color: ${defaultTheme.successColor};
 
+  `
+};
+export const STATUS_MODIFIERS_SECONDARY = {
+  warning: () => `
+    background-color: ${defaultTheme.warningColor};
+color:${nuetral[100]};
+  `,
+  error: () => `
+  background-color: ${defaultTheme.errorColor};
+color:${nuetral[100]};
+  `,
+  success: () => `
+  background-color: ${defaultTheme.successColor};
+color:${nuetral[100]};
   `
 };
 
@@ -43,6 +58,21 @@ export const COLOR_MODIFIERS = {
   `,
   dodger: () => `
   background-color: ${dodger[300]};
+  `
+};
+export const COLOR_MODIFIERS_SECONDAY = {
+  red: () => `
+  background-color: ${red[300]};
+  color:${nuetral[100]};
+  `,
+  lime: () => `
+  background-color: ${lime[400]};
+  color:${nuetral[100]};
+
+  `,
+  dodger: () => `
+  background-color: ${dodger[300]};
+  color:${nuetral[100]};
   `
 };
 
@@ -73,7 +103,13 @@ export const SecondaryButton = styled(Button)`
   background-color: white;
   border: 2px solid ${defaultTheme.primaryColor};
   color: ${defaultTheme.primaryColor};
+
+  &:disabled {
+    color: ${nuetral[500]};
+    cursor: not-allowed;
+  }
+
   ${applyStyleModifiers(SIZE_MODIFIERS, "size")};
-  ${applyStyleModifiers(COLOR_MODIFIERS, "color")};
-  ${applyStyleModifiers(STATUS_MODIFIERS, "status")};
+  ${applyStyleModifiers(COLOR_MODIFIERS_SECONDAY, "color")};
+  ${applyStyleModifiers(STATUS_MODIFIERS_SECONDARY, "status")};
 `;

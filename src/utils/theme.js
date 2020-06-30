@@ -15,7 +15,7 @@ export const defaultTheme = {
   textColorInverted: nuetral[100],
 
   disabled: nuetral[300],
-  textOnDisabled: nuetral[100],
+  textOnDisabled: nuetral[500],
 
   warningColor: warning[300],
 

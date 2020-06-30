@@ -48,6 +48,25 @@ Secondary buttons are used as a call to action and indicate less important actio
 
 <Preview withToolbar>
   <Story name="secondary">
-    <SecondaryButton>Cancel</SecondaryButton>
+    <SecondaryButton
+      size={select(
+        buttonKnob.selectLabel,
+        buttonKnob.selectSizes,
+        buttonKnob.defaultValue
+      )}
+      color={select(
+        buttonKnob.colorLabel,
+        buttonKnob.selectColors,
+        buttonKnob.defaultValue
+      )}
+      status={select(
+        buttonKnob.statusLabel,
+        buttonKnob.selectStatus,
+        buttonKnob.defaultValue
+      )}
+      disabled={boolean("Disabled", false)}
+    >
+      Cancel
+    </SecondaryButton>
   </Story>
 </Preview>
