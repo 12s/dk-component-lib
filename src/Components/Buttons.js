@@ -14,6 +14,12 @@ export const PrimaryButton = styled(Button)`
   background-color: ${defaultTheme.primaryColor};
   border: none;
   color: white;
+
+  &:disabled {
+    background-color: ${defaultTheme.disabled};
+    color: ${defaultTheme.textOnDisabled};
+    cursor: not-allowed;
+  }
 `;
 
 export const SecondaryButton = styled(Button)`
