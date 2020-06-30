@@ -1,0 +1,24 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { SignUpModal } from "./Modals";
+import { withKnobs, boolean, select } from "@storybook/addon-knobs";
+import { buttonKnob } from "../../.storybook/knobs.js";
+
+<Meta title="Design System|Modals" component={SignUpModal} />
+
+# Modals
+
+Modals force the user to interact with a message.
+
+## Signin Modal
+
+This modal is display to a guest user when clicking on DFS routes.
+
+<Preview withToolbar>
+  <Story name="Sign in">
+    <SignUpModal
+
+    >
+    </SignUpModal>
+
+  </Story>
+</Preview>

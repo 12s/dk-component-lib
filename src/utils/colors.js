@@ -6,11 +6,11 @@ export const orange = {
 export const lime = {
   200: "#B8FE20",
   300: "#9AE201",
-  400: "#7DB701"
+  400: "#5ead00"
 };
 export const dodger = {
   200: "#47A3FF",
-  300: "#FF890a",
+  300: "#1F8FFF",
   400: "#007AF5"
 };
 export const red = {

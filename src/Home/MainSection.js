@@ -1,6 +1,6 @@
 import React from "react";
+import styled from "styled-components";
 import { defaultTheme, typeScale, nuetral } from "../utils";
-// import { Content } from "carbon-components-react/lib/components/UIShell";
 
 export const Main = styled.div`
   background-color: ${nuetral[100]};
@@ -17,7 +17,7 @@ export const Paragraph = styled.p`
 `;
 
 const MainSection = () => {
-  const content = (
+  return (
     <div className="bx--grid">
       <div className="bx--row">
         <section className="bx--offset-lg-3 bx--col-lg-13">
@@ -62,8 +62,6 @@ const MainSection = () => {
       </div>
     </div>
   );
-
-  return <Content id="main-content">{content}</Content>;
 };
 
 export default MainSection;

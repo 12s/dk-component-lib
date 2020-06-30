@@ -1,10 +1,10 @@
-import { orange, lime, nuetral } from "./colors.js";
+import { orange, lime, nuetral, warning, error, success } from "./colors.js";
 import { primaryFont } from "./typography";
 
 export const defaultTheme = {
   primaryColor: orange[300],
-  primaryColorHover: orange[200],
-  primaryColorActive: orange[400],
+  primaryColorHover: lime[200],
+  primaryColorActive: lime[400],
 
   secondaryColor: lime[300],
   secondaryColorHover: lime[200],
@@ -17,24 +17,13 @@ export const defaultTheme = {
   disabled: nuetral[300],
   textOnDisabled: nuetral[100],
 
-  primaryFont
-};
+  warningColor: warning[300],
 
-export const darkTheme = {
-  primaryColor: orange[100],
-  primaryColorHover: orange[200],
-  primaryColorActive: orange[400],
+  errorColor: error[300],
 
-  secondaryColor: lime[300],
-  secondaryColorHover: lime[200],
-  secondaryColorActive: lime[400],
-
-  textColorOnPrimary: nuetral[500],
-  textColor: nuetral[100],
-  textColorInverted: nuetral[100],
-
-  disabled: nuetral[300],
-  textOnDisabled: nuetral[100],
+  successColor: success[300],
 
   primaryFont
 };
+
+export const darkTheme = {};

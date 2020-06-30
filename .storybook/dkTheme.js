@@ -1,7 +1,11 @@
 import { create } from "@storybook/theming/create";
+import { lime, nuetral, dodger } from "../src/utils";
 
 export default create({
-  base: "light",
+  colorPrimary: "orange",
+  colorSecondary: dodger[300],
+  barBg: lime[300],
+  barTextColor: nuetral[500],
   brandTitle: "DK Storybook",
   brandUrl: "https://www.draftkings.com/",
   brandImage:

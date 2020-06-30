@@ -1,8 +1,9 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
-import { PrimaryButton, SecondaryButton, TertiaryButton } from "./Buttons";
-import { withKnobs, boolean } from "@storybook/addon-knobs";
+import { Button, SecondaryButton } from "./Buttons";
+import { withKnobs, boolean, select } from "@storybook/addon-knobs";
+import { buttonKnob } from "../../.storybook/knobs.js";
 
-<Meta title="Design System|Buttons" component={PrimaryButton} />
+<Meta title="Design System|Buttons" component={Button} />
 
 # Buttons
 
@@ -18,9 +19,26 @@ Primary buttons are used as a call to action and indicate the most important act
 
 <Preview withToolbar>
   <Story name="primary">
-    <PrimaryButton disabled={boolean("Disabled", false)}>
-      Enter Contest
-    </PrimaryButton>
+    <Button
+      size={select(
+        buttonKnob.selectLabel,
+        buttonKnob.selectSizes,
+        buttonKnob.defaultValue
+      )}
+      color={select(
+        buttonKnob.colorLabel,
+        buttonKnob.selectColors,
+        buttonKnob.defaultValue
+      )}
+      status={select(
+        buttonKnob.statusLabel,
+        buttonKnob.selectStatus,
+        buttonKnob.defaultValue
+      )}
+      disabled={boolean("Disabled", false)}
+    >
+      Draft Team
+    </Button>
   </Story>
 </Preview>
 
