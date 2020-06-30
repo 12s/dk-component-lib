@@ -1,5 +1,20 @@
 import React from "react";
-import { Content } from "carbon-components-react/lib/components/UIShell";
+import { defaultTheme, typeScale, nuetral } from "../utils";
+// import { Content } from "carbon-components-react/lib/components/UIShell";
+
+export const Main = styled.div`
+  background-color: ${nuetral[100]};
+  font-size: ${typeScale.paragraph};
+  padding: 20px 30px;
+  height: 100%;
+  font-family: ${defaultTheme.primaryFont};
+  color: ${defaultTheme.textColorInverted};
+`;
+
+export const Paragraph = styled.p`
+  margin-bottom: 20px;
+  line-height: 20px;
+`;
 
 const MainSection = () => {
   const content = (
