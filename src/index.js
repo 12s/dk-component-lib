@@ -1,22 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { render } from "react-dom";
 import MainSection from "./Home/MainSection.js";
 import Header from "./Home/Header.js";
-import { defaultTheme, darkTheme } from "./utils";
-import { ThemeProvider } from "styled-components";
 
 const App = () => {
-  const [useDarkTheme, setDarkTheme] = useState(false);
-
   return (
-    <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
-      <div className="container">
-        <Header>
-          DraftKings <strong>[React Component Library]</strong>
-        </Header>
-        <MainSection />
-      </div>
-    </ThemeProvider>
+    <div className="container">
+      <Header>
+        DraftKings <strong>[React Component Library]</strong>
+      </Header>
+      <MainSection />
+    </div>
   );
 };
 

@@ -21,13 +21,10 @@ const MainSection = () => {
     <div className="bx--grid">
       <div className="bx--row">
         <section className="bx--offset-lg-3 bx--col-lg-13">
-          <p style={{ lineHeight: "20px" }}>Hello!</p>
           <br />
           <br />
           <p style={{ lineHeight: "20px" }}>
-            This is the Git Repo for two components (src/Components) that are
-            used to create a React StoryBook. The StoryBook is hosted on netlify
-            and comes equiped with full service CICD builds and deployments.
+            Components made with styled-componets. Theming in utils directory.
           </p>
           <br />
           <br />
@@ -39,18 +36,12 @@ const MainSection = () => {
             >
               here
             </a>
-            . pdf:
-            <a
-              style={{ paddingLeft: "4px" }}
-              href="https://www.figma.com/file/i4sdIfBSXcw2F0boDmgJyM/DK-Design-Pallet?node-id=27%3A305"
-            >
-              here
-            </a>
+            .
           </p>
           <br />
           <br />
           <p style={{ lineHeight: "20px" }}>
-            Sorybook with knobs/alternate theming:
+            Sorybook showing Button/Modal canvas/docs:
             <a
               style={{ paddingLeft: "4px" }}
               href="https://www.carbondesignsystem.com/"
