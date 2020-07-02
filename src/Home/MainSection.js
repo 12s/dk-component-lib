@@ -44,7 +44,7 @@ const MainSection = () => {
             Sorybook showing Button/Modal canvas/docs:
             <a
               style={{ paddingLeft: "4px" }}
-              href="https://www.carbondesignsystem.com/"
+              href="https://devoss-dk-storybook.netlify.app/"
             >
               here
             </a>

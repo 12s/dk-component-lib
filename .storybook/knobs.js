@@ -9,11 +9,6 @@ export const buttonKnob = {
   selectStatus: {
     Normal: "",
     Warning: "warning",
-    Error: "error"
-  },
-  selectStatus: {
-    Normal: "",
-    Warning: "warning",
     Error: "error",
     Success: "success"
   },
