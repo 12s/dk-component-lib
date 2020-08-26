@@ -1,2 +1,2 @@
-# dk-component-lib
+# swoop-component-lib
 Created with CodeSandbox
