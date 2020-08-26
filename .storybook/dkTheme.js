@@ -2,12 +2,11 @@ import { create } from "@storybook/theming/create";
 import { lime, nuetral, dodger } from "../src/utils";
 
 export default create({
-  colorPrimary: "orange",
-  colorSecondary: dodger[300],
-  barBg: lime[300],
-  barTextColor: nuetral[500],
-  brandTitle: "DK Storybook",
-  brandUrl: "https://www.draftkings.com/",
-  brandImage:
-    "https://www.draftkings.com/dkjs/header/v1/web/de8b3fb4a604ec9cc8468b2efdef4b91.png"
+  colorPrimary: nuetral[200],
+  colorSecondary: nuetral[500],
+  barBg: dodger[200],
+  barTextColor: nuetral[200],
+  brandTitle: "Swoop Storybook",
+  brandUrl: "https://swoopapp.com/",
+  brandImage: "https://joinswoop.com/assets/img/logo-6a429e4c8f.svg"
 });

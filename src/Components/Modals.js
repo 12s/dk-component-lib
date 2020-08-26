@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { animated, useSpring } from "react-spring";
 import { typeScale, primaryFont, nuetral, dodger } from "../utils";
@@ -54,20 +54,53 @@ const CloseModalButton = styled.button`
 `;
 
 export const SignUpModal = ({ showModal, setShowModal }) => {
+  const [seconds, setSeconds] = useState(20);
+  const [isActive, setIsActive] = useState(true);
+
+  const [finishTime] = useState(new Date(Date.now() + 20000));
+
+  useEffect(() => {
+    let interval = null;
+    if (isActive) {
+      interval = setInterval(() => {
+        setSeconds((seconds) => seconds - 1);
+      }, 1000);
+    } else if (!isActive && seconds !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [seconds]);
+
   return (
     <animated.div style={useSpring(getAnimation(showModal))}>
       <ModalWrapper>
-        <img
-          src="https://d9sojbwwxq62r.cloudfront.net/dkjs/baa034abd5a1637103cc1d9ef99f572b.png"
-          height="76"
-          width="140"
-        />
-        <ModalHeader>Sign Up</ModalHeader>
-        <SignUpText>
-          Sign up today to get access to all of our content and features!
-        </SignUpText>
+        <div
+          style={{
+            background: nuetral[500],
+            display: "flex",
+            justifyContent: "center",
+            height: "112px",
+            width: "260px"
+          }}
+        >
+          <img src="https://joinswoop.com/assets/img/logo-6a429e4c8f.svg" />
+        </div>
 
-        <Button onClick={() => console.log("You signed up!")}>Sign Up</Button>
+        <ModalHeader>Sign Up</ModalHeader>
+        {seconds > 0 && (
+          <SignUpText>
+            Promotion only lasts until {finishTime.toLocaleTimeString()}! Only{" "}
+            {seconds} more seconds left!
+          </SignUpText>
+        )}
+
+        {seconds <= 0 && (
+          <SignUpText>
+            Welp... you can always refresh the browser for a new promo :)
+          </SignUpText>
+        )}
+
+        <Button onClick={() => setShowModal(false)}>Sign Up</Button>
       </ModalWrapper>
     </animated.div>
   );

@@ -1,8 +1,16 @@
-import { orange, lime, nuetral, warning, error, success } from "./colors.js";
+import {
+  orange,
+  lime,
+  nuetral,
+  warning,
+  error,
+  success,
+  dodger
+} from "./colors.js";
 import { primaryFont } from "./typography";
 
 export const defaultTheme = {
-  primaryColor: orange[300],
+  primaryColor: dodger[300],
   primaryColorHover: lime[200],
   primaryColorActive: lime[400],
 
