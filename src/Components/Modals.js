@@ -54,9 +54,8 @@ const CloseModalButton = styled.button`
 `;
 
 export const SignUpModal = ({ showModal, setShowModal }) => {
-  const [seconds, setSeconds] = useState(20);
+  const [seconds, setSeconds] = useState(14);
   const [isActive, setIsActive] = useState(true);
-
   const [finishTime] = useState(new Date(Date.now() + 20000));
 
   useEffect(() => {
@@ -66,6 +65,7 @@ export const SignUpModal = ({ showModal, setShowModal }) => {
         setSeconds((seconds) => seconds - 1);
       }, 1000);
     } else if (!isActive && seconds !== 0) {
+      setIsActive(false)
       clearInterval(interval);
     }
     return () => clearInterval(interval);
@@ -76,17 +76,18 @@ export const SignUpModal = ({ showModal, setShowModal }) => {
       <ModalWrapper>
         <div
           style={{
-            background: nuetral[500],
-            display: "flex",
-            justifyContent: "center",
-            height: "112px",
-            width: "260px"
+            background: "url('https://mma.prnewswire.com/media/902553/Guaranteed_Rate_Logo.jpg?p=facebook')",
+            height: "100px",
+            width: "255px",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+
           }}
         >
-          <img src="https://joinswoop.com/assets/img/logo-6a429e4c8f.svg" />
+          
         </div>
 
-        <ModalHeader>Sign Up</ModalHeader>
+        <ModalHeader>Refinance today</ModalHeader>
         {seconds > 0 && (
           <SignUpText>
             Promotion only lasts until {finishTime.toLocaleTimeString()}! Only{" "}
@@ -100,7 +101,11 @@ export const SignUpModal = ({ showModal, setShowModal }) => {
           </SignUpText>
         )}
 
-        <Button onClick={() => setShowModal(false)}>Sign Up</Button>
+        <Button 
+        disabled={(seconds <= 0) ? true : false}
+        onClick={() => setShowModal(false)}>
+          {(seconds <= 0) ? "Expired! 🥲" : "Get Started!"}
+        </Button>
       </ModalWrapper>
     </animated.div>
   );

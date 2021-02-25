@@ -102,6 +102,7 @@ export const Button = styled.button`
 export const SecondaryButton = styled(Button)`
   background-color: white;
   border: 2px solid ${defaultTheme.primaryColor};
+  font-weight: bold;
   color: ${defaultTheme.primaryColor};
 
   &:disabled {

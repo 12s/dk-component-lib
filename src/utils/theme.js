@@ -5,12 +5,13 @@ import {
   warning,
   error,
   success,
-  dodger
+  dodger,
+  red
 } from "./colors.js";
 import { primaryFont } from "./typography";
 
 export const defaultTheme = {
-  primaryColor: dodger[300],
+  primaryColor: red[300],
   primaryColorHover: lime[200],
   primaryColorActive: lime[400],
 
